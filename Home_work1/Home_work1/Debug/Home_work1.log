@@ -1,0 +1,3 @@
+﻿  Main.c
+D:\Projects\Algorithms\Home_work1\Home_work1\Main.c(15,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Home_work1.vcxproj -> D:\Projects\Algorithms\Home_work1\Debug\Home_work1.exe
