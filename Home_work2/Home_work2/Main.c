@@ -7,19 +7,26 @@
 //c.* рекурсивно, используя свойство четности степени.
 
 #include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
 
-char* bin;
+int result = 0;
+char buffer[12];
 
 void solution1();
 void solution2();
 void solution3();
 void menu();
 void DecToBin(int n);
+void StrRev(char* S);
 
 
 int main(int argc, char* argv[])
 {
 	int sel = 0;
+	
+	setlocale(LC_ALL, "rus");
+
 	do
 	{
 		menu();
@@ -49,12 +56,17 @@ int main(int argc, char* argv[])
 void solution1()
 {
 	int n;
+
+	result = 0;
 	printf("\nЗадача 1. Перевод числа из десятичной системы в двоичную\n");
 	// Решение
 	printf("Введите целое положительное число:");	
 	scanf("%i", &n);
-	DecToBin(n);
-	printf(&bin);
+	DecToBin(n);	
+	StrRev(buffer);	
+	result = atoi(buffer);
+	printf("%i", result);
+	printf("\n");
 }
 void solution2()
 {
@@ -78,10 +90,25 @@ void DecToBin(int n)
 {
 	if (n > 0)
 	{
-		if (n % 2 == 1)
-			bin += '1';
-		else
-			bin += '0';
+		result = result * 10 + n % 2;
 		DecToBin(n / 2);
+		ultoa(result, buffer, 10);
+	}	
+}
+
+//Переворот строки
+void StrRev(char* S)
+{
+	int i, j, l;
+	char t;
+	l = strlen(S);
+	i = 0;
+	j = l - 1;
+	while (i < j)
+	{
+		t = S[i];
+		S[i] = S[j];
+		S[j] = t;
+		i++; j--;
 	}
 }
