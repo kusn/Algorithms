@@ -1,6 +1,7 @@
 ﻿  Main.c
-D:\Projects\Algorithms\Home_work2\Home_work2\Main.c(33,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Projects\Algorithms\Home_work2\Home_work2\Main.c(64,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Projects\Algorithms\Home_work2\Home_work2\Main.c(95,3): warning C4996: 'ultoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _ultoa. See online help for details.
-D:\Projects\Algorithms\Home_work2\Home_work2\Main.c(104,12): warning C4013: strlen: нет определения; предполагается "extern" с возвратом типа "int"
-  Home_work2.vcxproj -> D:\Projects\Algorithms\Home_work2\Debug\Home_work2.exe
+D:\Учеба\Algorithms\Home_work2\Home_work2\Main.c(33,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work2\Home_work2\Main.c(61,8): warning C4013: memset: нет определения; предполагается "extern" с возвратом типа "int"
+D:\Учеба\Algorithms\Home_work2\Home_work2\Main.c(66,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work2\Home_work2\Main.c(99,3): warning C4996: 'ultoa': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _ultoa. See online help for details.
+D:\Учеба\Algorithms\Home_work2\Home_work2\Main.c(110,12): warning C4013: strlen: нет определения; предполагается "extern" с возвратом типа "int"
+  Home_work2.vcxproj -> D:\Учеба\Algorithms\Home_work2\Debug\Home_work2.exe

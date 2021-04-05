@@ -58,13 +58,16 @@ void solution1()
 	int n;
 
 	result = 0;
+	memset(buffer, 0, sizeof(buffer));
+
 	printf("\nЗадача 1. Перевод числа из десятичной системы в двоичную\n");
+
 	// Решение
 	printf("Введите целое положительное число:");	
 	scanf("%i", &n);
-	DecToBin(n);	
-	StrRev(buffer);	
-	result = atoi(buffer);
+	DecToBin(n);	//Получаем перевёрнутый результат
+	StrRev(buffer);		//Переворачиваем результат
+	result = atoi(buffer);	//Преобразуем строку в целое
 	printf("%i", result);
 	printf("\n");
 }
@@ -88,11 +91,14 @@ void menu()
 
 void DecToBin(int n)
 {
+	char c_res[10] = "";
+
 	if (n > 0)
-	{
-		result = result * 10 + n % 2;
-		DecToBin(n / 2);
-		ultoa(result, buffer, 10);
+	{		
+		result = n % 2;	//Находим остаток от деления
+		ultoa(result, c_res, 10);	//Записываем во временную переменную
+		snprintf(buffer, sizeof buffer, "%s%s", buffer, c_res);	//Соединяем строки
+		DecToBin(n / 2);		
 	}	
 }
 
