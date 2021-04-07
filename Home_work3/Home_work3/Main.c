@@ -22,6 +22,7 @@ void solution3();
 void menu();
 void BubbleSort(int length, int* mass);
 void BubbleSortWithFlag(int length, int* mass);
+void ShakeSort(int length, int* mass);
 void print(int N, int* a);
 void swap(int* a, int* b);
 int* GetArrayFromFile(char* file);
@@ -62,7 +63,7 @@ void solution1()
 {	
 	int* mass;
 
-	printf("Задача 1\n");
+	printf("Задача 1. Сортировка пузырьком\n");
 	
 	// Решение
 	mass = (int*)malloc(lenghArray * sizeof(int));
@@ -80,8 +81,17 @@ void solution1()
 }
 void solution2()
 {
-	printf("Solution 2\n");
+	int* mass;
+
+	printf("Задача 2. Шейкерная сортировка\n");
+	
 	// Решение
+	mass = (int*)malloc(lenghArray * sizeof(int));
+	mass = GetArrayFromFile(file);
+	printf("Неотсортированный массив\n");
+	print(lenghArray, mass);
+	printf("Отсортированный массив шейкерной сортировкой\n");
+	ShakeSort(lenghArray, mass);
 }
 void solution3()
 {
@@ -90,8 +100,8 @@ void solution3()
 }
 void menu()
 {
-	printf("1 - Задача 1\n");
-	printf("2 - task2\n");
+	printf("1 - Задача 1. Сортировка пузырьком\n");
+	printf("2 - Задача 2. Шейкерная сортировка\n");
 	printf("3 - task3\n");
 	printf("0 - exit\n");
 }
@@ -103,8 +113,7 @@ void BubbleSortWithFlag(int length, int* mass)
 
 	for (int i = length - 1; i >= 0; i--)
 	{
-		Flag = 1;
-		step++;
+		Flag = 1;		
 		for (int j = 0; j < i; j++)
 		{
 			if (mass[j] > mass[j + 1])
@@ -113,6 +122,7 @@ void BubbleSortWithFlag(int length, int* mass)
 				Flag = 0;
 				step++;
 			}
+			step++;
 		}
 		if (Flag == 1)
 		{
@@ -140,7 +150,46 @@ void BubbleSort(int length, int* mass)
 				swap(&mass[j], &mass[j + 1]);
 				step++;
 			}
+			step++;
 		}		
+	}
+	printf("Отсортированный массив:\n");
+	print(length, mass);
+	printf("\n");
+	printf("Количество шагов составило %d\n", step);
+}
+
+// Шейкерная сортировка
+void ShakeSort(int length, int* mass)
+{
+	int left = 0, right = length - 1; 
+	int flag = 1, step = 0;
+	
+	while ((left < right) && flag > 0)
+	{
+		flag = 0;
+		for (int i = left; i < right; i++)
+		{
+			if (mass[i] > mass[i + 1])
+			{
+				swap(&mass[i], &mass[i + 1]);
+				flag = 1;
+				step++;
+			}
+			step++;
+		}
+		right--;
+		for (int i = right; i > left; i--)
+		{
+			if (mass[i - 1] > mass[i])
+			{
+				swap(&mass[i], &mass[i - 1]);				
+				flag = 1;
+				step++;
+			}
+			step++;
+		}
+		left++;
 	}
 	printf("Отсортированный массив:\n");
 	print(length, mass);
