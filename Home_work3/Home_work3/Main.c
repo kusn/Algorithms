@@ -15,6 +15,7 @@
 
 int lenghArray = 100;
 char* file = "..\\..\\Array.txt";
+char* sortFile = "..\\..\\SortArray.txt";
 
 void solution1();
 void solution2();
@@ -23,17 +24,26 @@ void menu();
 void BubbleSort(int length, int* mass);
 void BubbleSortWithFlag(int length, int* mass);
 void ShakeSort(int length, int* mass);
+int BinarySearch(int searchItem, int length, int* mass);
 void print(int N, int* a);
 void swap(int* a, int* b);
 int* GetArrayFromFile(char* file);
 void ArrayToFile(int length, char* file);
+void SortedArrayToFile(int length, int* mass, char* file);
 
 int main()
 {
-	int sel = 0;	
+	int sel = 0;
+	int* array;
 
+	//Создаем файл с не отсортированным массивом
 	setlocale(LC_ALL, "rus");
 	ArrayToFile(lenghArray, file);
+
+	//Создаём файл с отсортированным массивом
+	array = (int*)malloc(lenghArray * sizeof(int));
+	array = GetArrayFromFile(file);
+	SortedArrayToFile(lenghArray, array, sortFile);
 
 	do
 	{
@@ -95,14 +105,27 @@ void solution2()
 }
 void solution3()
 {
-	printf("Solution 3\n");
+	int result, searchItem;
+	int* mass;
+
+	printf("Задача 3. Бинарный поиск\n");
+	
 	// Решение
+	mass = (int*)malloc(lenghArray * sizeof(int));
+	mass = GetArrayFromFile(sortFile);
+	printf("Введите искомое значение\n");
+	scanf("%i", &searchItem);
+	result = BinarySearch(searchItem, lenghArray, mass);
+	if (result >= 0)
+		print("Индекс искомого значения - %i", result);
+	else if (result == -1)
+		printf("Искомое значение не найдено");
 }
 void menu()
 {
 	printf("1 - Задача 1. Сортировка пузырьком\n");
 	printf("2 - Задача 2. Шейкерная сортировка\n");
-	printf("3 - task3\n");
+	printf("3 - Задача 3. Бинарный поиск\n");
 	printf("0 - exit\n");
 }
 
@@ -197,6 +220,25 @@ void ShakeSort(int length, int* mass)
 	printf("Количество шагов составило %d\n", step);
 }
 
+// Бинарный поиск
+int BinarySearch(int searchItem, int length, int* mass)
+{
+	int L = 0, R = length - 1;
+	int m = L + (R - L) / 2;
+	while (L <= R && mass[m] != searchItem)
+	{
+		if (mass[m] < searchItem)
+			L = m + 1;
+		else
+			R = m - 1;
+		m = L + (R - L) / 2;
+	}
+	if (mass[m] == searchItem)
+		return m;
+	else
+		return -1;
+}
+
 // Распечатываем массив
 void print(int N, int* a)
 {
@@ -246,6 +288,24 @@ void ArrayToFile(int length, char* file)
 	for (int i = 0; i < length; i++)
 	{		
 		fprintf(out, "%i\n", rand() % 1000);
+	}
+	fclose(out);
+}
+
+//Создаём файл с отсортированными данными
+void SortedArrayToFile(int length, int* mass, char* file)
+{
+	int* arrayToSort;
+
+	arrayToSort = (int*)malloc(lenghArray * sizeof(int));
+	arrayToSort = mass;
+	ShakeSort(length, arrayToSort);
+	FILE* out;
+	out = fopen(file, "w +");
+	fprintf(out, "%i\n", length);
+	for (int i = 0; i < length; i++)
+	{
+		fprintf(out, "%i\n", arrayToSort[i]);
 	}
 	fclose(out);
 }
