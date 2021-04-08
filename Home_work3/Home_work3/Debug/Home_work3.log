@@ -1,9 +1,11 @@
 ﻿  Main.c
-D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(41,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(112,6): warning C4101: tmp: неиспользованная локальная переменная
-D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(142,6): warning C4101: tmp: неиспользованная локальная переменная
-D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(225,7): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(226,2): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(230,3): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(244,8): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(51,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(117,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(135,6): warning C4101: tmp: неиспользованная локальная переменная
+D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(165,6): warning C4101: tmp: неиспользованная локальная переменная
+D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(267,7): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(268,2): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(272,3): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(286,8): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work3\Home_work3\Main.c(304,8): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   Home_work3.vcxproj -> D:\Учеба\Algorithms\Home_work3\Debug\Home_work3.exe
