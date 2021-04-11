@@ -1,0 +1,11 @@
+﻿  Main.c
+D:\Учеба\Algorithms\Home_work4\Home_work4\Main.c(44,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work4\Home_work4\Main.c(77,20): warning C4013: rand: нет определения; предполагается "extern" с возвратом типа "int"
+D:\Учеба\Algorithms\Home_work4\Home_work4\Main.c(114,7): warning C4013: getch: нет определения; предполагается "extern" с возвратом типа "int"
+D:\Учеба\Algorithms\Home_work4\Home_work4\Main.c(126,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work4\Home_work4\Main.c(128,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work4\Home_work4\Main.c(119,21): warning C4101: b: неиспользованная локальная переменная
+D:\Учеба\Algorithms\Home_work4\Home_work4\Main.c(118,18): warning C4101: c: неиспользованная локальная переменная
+D:\Учеба\Algorithms\Home_work4\Home_work4\Main.c(118,9): warning C4101: j: неиспользованная локальная переменная
+D:\Учеба\Algorithms\Home_work4\Home_work4\Main.c(118,6): warning C4101: i: неиспользованная локальная переменная
+  Home_work4.vcxproj -> D:\Учеба\Algorithms\Home_work4\Debug\Home_work4.exe
