@@ -1,3 +1,6 @@
 ﻿  Main.c
-D:\Kudryashov\Учеба\Algorithms\Home_work5\Home_work5\Main.c(29,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  Home_work5.vcxproj -> D:\Kudryashov\Учеба\Algorithms\Home_work5\Debug\Home_work5.exe
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(61,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(93,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(144,3): warning C4033: "pop" должен возвращать значение
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(158): warning C4715: pop: значение возвращается не при всех путях выполнения
+  Home_work5.vcxproj -> D:\Учеба\Algorithms\Home_work5\Debug\Home_work5.exe
