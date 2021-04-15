@@ -1,0 +1,16 @@
+﻿  Main.c
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(131,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(172,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(204,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(227,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(250,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(314,3): warning C4033: "pop" должен возвращать значение
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(334,3): warning C4033: "pop2" должен возвращать значение
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(428,3): warning C4033: "popStack" должен возвращать значение
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(459,3): warning C4033: "CopyStack" должен возвращать значение
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(541,14): warning C4013: isalnum: нет определения; предполагается "extern" с возвратом типа "int"
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(328): warning C4715: pop: значение возвращается не при всех путях выполнения
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(348): warning C4715: pop2: значение возвращается не при всех путях выполнения
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(442): warning C4715: popStack: значение возвращается не при всех путях выполнения
+D:\Учеба\Algorithms\Home_work5\Home_work5\Main.c(475): warning C4715: CopyStack: значение возвращается не при всех путях выполнения
+  Home_work5.vcxproj -> D:\Учеба\Algorithms\Home_work5\Debug\Home_work5.exe
