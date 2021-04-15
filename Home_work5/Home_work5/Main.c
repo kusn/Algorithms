@@ -36,9 +36,9 @@ TT pop2();
 void PrintStack2();
 void DecToBin(int n);
 int IsBracketSequence(char* s, int size);
-void pushToStack(struct Stack Stack, T value);
-T popStack(struct Stack Stack);
-void CopyStack(struct Stack FromStack, struct Stack ToStack);
+void pushToStack(struct Stack *stack, T value);
+T popStack(struct Stack *Stack);
+struct Stack CopyStack(struct Stack* FromStack);
 void PrintStack3(struct Stack Stack);
 
 // Опишем структуру узла списка
@@ -57,7 +57,7 @@ struct TTNode
 typedef struct TNode Node;
 typedef struct TTNode Node2;
 
-struct Stack
+typedef struct Stack
 {
 	Node* head;
 	int size;
@@ -78,8 +78,7 @@ struct Stack2 Stack2;
 
 int main()
 {
-	int sel = 0;
-	
+	int sel = 0;	
 
 	setlocale(LC_ALL, "rus");
 
@@ -159,7 +158,7 @@ void solution3()
 		printf("Скобочная последовательность верна\n");
 	else
 		printf("Скобочная последовательность не верна\n");
-	printf("\n");
+	printf("\n\n");
 
 }
 
@@ -171,23 +170,25 @@ void solution4()
 	Stack4.maxSize = 5;
 	Stack3.head = NULL;
 	Stack4.head = NULL;
+	Stack3.size = 0;
+	Stack4.size = 0;
 	printf("Задача 4. Создать функцию, копирующую односвязный список(то есть создает в памяти копию односвязного списка, не удаляя первый список)\n");
 
 	// Решение
 	printf("Введите 5 целых чисел в формате \"х, у\": ");
 	scanf("%i,%i,%i,%i,%i", &x1, &x2, &x3, &x4, &x5);
-	pushToStack(Stack3, x1);
-	pushToStack(Stack3, x2);
-	pushToStack(Stack3, x3);
-	pushToStack(Stack3, x4);
-	pushToStack(Stack3, x5);
+	pushToStack(&Stack3, x1);
+	pushToStack(&Stack3, x2);
+	pushToStack(&Stack3, x3);
+	pushToStack(&Stack3, x4);
+	pushToStack(&Stack3, x5);
 	printf("Стэк №1: ");
 	PrintStack3(Stack3);
 	printf("\n");
-	CopyStack(Stack3, Stack4);
+	Stack4 = CopyStack(&Stack3);
 	printf("Стэк №2: ");
 	PrintStack3(Stack4);
-	printf("\n");
+	printf("\n\n");
 
 }
 void menu()
@@ -325,22 +326,22 @@ int IsBracketSequence(char* s, int size)
 	return r;
 }
 
-void pushToStack(struct Stack stack, T value)
+void pushToStack(struct Stack *stack, T value)
 {
-	if (stack.size >= stack.maxSize) {
+	if (stack->size >= stack->maxSize) {
 		printf("Ошибка. Стек переполнен!\n");
 		return;
 	}
 	Node* tmp = (Node*)malloc(sizeof(Node));
 	tmp->value = value;
-	tmp->next = stack.head;
-	stack.head = tmp;
-	stack.size++;
+	tmp->next = stack->head;
+	stack->head = tmp;
+	stack->size++;
 }
 
-T popStack(struct Stack Stack)
+T popStack(struct Stack *stack)
 {
-	if (Stack.size == 0)
+	if (stack->size == 0)
 	{
 		printf("Stack is empty");
 		return;
@@ -349,40 +350,47 @@ T popStack(struct Stack Stack)
 	Node* next = NULL;
 	// Значение "наверху" списка
 	T value;
-	value = Stack.head->value;
-	next = Stack.head;
-	Stack.head = Stack.head->next;
+	value = stack->head->value;
+	next = stack->head;
+	stack->head = stack->head->next;
 	// Запись, на которую указывала голова удаляем, освобождая память
 	free(next);
 	// Возвращаем значение, которое было в голове
-	Stack.size--;
+	stack->size--;
 	return value;
 }
 
-void CopyStack(struct Stack FromStack, struct Stack ToStack)
+struct Stack CopyStack(struct Stack *FromStack)
 {
 	T value;
+	struct Stack ToStack;
 	struct Stack TempStack;
-	TempStack.maxSize = FromStack.size;
+	ToStack.maxSize = FromStack->size;
+	TempStack.maxSize = FromStack->size;
+	ToStack.head = NULL;
 	TempStack.head = NULL;
+	ToStack.size = 0;
+	TempStack.size = 0;
 
-	if (FromStack.size == 0)
+	if (FromStack->size == 0)
 	{
 		printf("Исходный стек пустой");
 		return;
 	}
-	Node* current = FromStack.head;
+	Node* current = FromStack->head;
 	while (current != NULL)
 	{
 		value = current->value;
 		current = current->next;
-		pushToStack(TempStack, current);
+		pushToStack(&TempStack, value);		
 	}
 	
 	while (TempStack.size)
 	{
-		pushToStack(ToStack, popStack(TempStack));
-	}	
+		value = popStack(&TempStack);
+		pushToStack(&ToStack, value);
+	}
+	return ToStack;
 }
 
 void PrintStack3(struct Stack Stack)
