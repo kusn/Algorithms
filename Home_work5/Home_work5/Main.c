@@ -26,6 +26,7 @@ char buffer[12];
 void solution1();
 void solution2();
 void solution3();
+void solution4();
 void menu();
 void push(T value);
 T pop();
@@ -35,6 +36,10 @@ TT pop2();
 void PrintStack2();
 void DecToBin(int n);
 int IsBracketSequence(char* s, int size);
+void pushToStack(struct Stack Stack, T value);
+T popStack(struct Stack Stack);
+void CopyStack(struct Stack FromStack, struct Stack ToStack);
+void PrintStack3(struct Stack Stack);
 
 // Опишем структуру узла списка
 struct TNode
@@ -67,12 +72,14 @@ struct Stack2
 };
 
 struct Stack Stack;
+struct Stack Stack3, Stack4;
 struct Stack2 Stack2;
 
 
 int main()
 {
 	int sel = 0;
+	
 
 	setlocale(LC_ALL, "rus");
 
@@ -90,6 +97,9 @@ int main()
 			break;
 		case 3:
 			solution3();
+			break;
+		case 4:
+			solution4();
 			break;
 		case 0:
 			printf("Bye-bye");
@@ -152,11 +162,40 @@ void solution3()
 	printf("\n");
 
 }
+
+void solution4()
+{
+	int x1, x2, x3, x4, x5;
+
+	Stack3.maxSize = 5;
+	Stack4.maxSize = 5;
+	Stack3.head = NULL;
+	Stack4.head = NULL;
+	printf("Задача 4. Создать функцию, копирующую односвязный список(то есть создает в памяти копию односвязного списка, не удаляя первый список)\n");
+
+	// Решение
+	printf("Введите 5 целых чисел в формате \"х, у\": ");
+	scanf("%i,%i,%i,%i,%i", &x1, &x2, &x3, &x4, &x5);
+	pushToStack(Stack3, x1);
+	pushToStack(Stack3, x2);
+	pushToStack(Stack3, x3);
+	pushToStack(Stack3, x4);
+	pushToStack(Stack3, x5);
+	printf("Стэк №1: ");
+	PrintStack3(Stack3);
+	printf("\n");
+	CopyStack(Stack3, Stack4);
+	printf("Стэк №2: ");
+	PrintStack3(Stack4);
+	printf("\n");
+
+}
 void menu()
 {
 	printf("1 - Задача 1. Реализовать перевод из десятичной в двоичную систему счисления с использованием стека\n");
 	printf("2 - Задача 2. Добавить в программу «реализация стека на основе односвязного списка» проверку на выделение памяти\n");
-	printf("3 - Задача 3.  Написать программу, которая определяет, является ли введенная скобочная последовательность правильной\n");
+	printf("3 - Задача 3. Написать программу, которая определяет, является ли введенная скобочная последовательность правильной\n");
+	printf("4 - Задача 4. Создать функцию, копирующую односвязный список(то есть создает в памяти копию односвязного списка, не удаляя первый список)\n");
 	printf("0 - exit\n");
 }
 
@@ -284,4 +323,74 @@ int IsBracketSequence(char* s, int size)
 	}
 
 	return r;
+}
+
+void pushToStack(struct Stack stack, T value)
+{
+	if (stack.size >= stack.maxSize) {
+		printf("Ошибка. Стек переполнен!\n");
+		return;
+	}
+	Node* tmp = (Node*)malloc(sizeof(Node));
+	tmp->value = value;
+	tmp->next = stack.head;
+	stack.head = tmp;
+	stack.size++;
+}
+
+T popStack(struct Stack Stack)
+{
+	if (Stack.size == 0)
+	{
+		printf("Stack is empty");
+		return;
+	}
+	// Временный указатель
+	Node* next = NULL;
+	// Значение "наверху" списка
+	T value;
+	value = Stack.head->value;
+	next = Stack.head;
+	Stack.head = Stack.head->next;
+	// Запись, на которую указывала голова удаляем, освобождая память
+	free(next);
+	// Возвращаем значение, которое было в голове
+	Stack.size--;
+	return value;
+}
+
+void CopyStack(struct Stack FromStack, struct Stack ToStack)
+{
+	T value;
+	struct Stack TempStack;
+	TempStack.maxSize = FromStack.size;
+	TempStack.head = NULL;
+
+	if (FromStack.size == 0)
+	{
+		printf("Исходный стек пустой");
+		return;
+	}
+	Node* current = FromStack.head;
+	while (current != NULL)
+	{
+		value = current->value;
+		current = current->next;
+		pushToStack(TempStack, current);
+	}
+	
+	while (TempStack.size)
+	{
+		pushToStack(ToStack, popStack(TempStack));
+	}	
+}
+
+void PrintStack3(struct Stack Stack)
+{
+	Node* current = Stack.head;
+	while (current != NULL)
+	{
+		printf("%i", current->value);
+		current = current->next;
+	}
 }
