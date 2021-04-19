@@ -1,0 +1,3 @@
+﻿  Main.c
+D:\Kudryashov\Учеба\Algorithms\Home_work6\Home_work6\Main.c(23,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Home_work6.vcxproj -> D:\Kudryashov\Учеба\Algorithms\Home_work6\Debug\Home_work6.exe
