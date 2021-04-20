@@ -320,7 +320,10 @@ void PrintTree(Node* root)
 		}
 	}
 	else
+	{
 		printf("Дерево пустое!\n");
+		return;
+	}
 }
 
 // Создание нового узла дерева
