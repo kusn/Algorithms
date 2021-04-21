@@ -1,3 +1,6 @@
 ﻿  Main.c
-D:\Kudryashov\Учеба\Algorithms\Home_work7\Home_work7\Main.c(19,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Kudryashov\Учеба\Algorithms\Home_work7\Home_work7\Main.c(34,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Kudryashov\Учеба\Algorithms\Home_work7\Home_work7\Main.c(66,33): warning C4090: функция: разные квалификаторы "const"
+D:\Kudryashov\Учеба\Algorithms\Home_work7\Home_work7\Main.c(98,15): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Kudryashov\Учеба\Algorithms\Home_work7\Home_work7\Main.c(107,4): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   Home_work7.vcxproj -> D:\Kudryashov\Учеба\Algorithms\Home_work7\Debug\Home_work7.exe
