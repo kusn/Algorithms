@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <locale.h>
 #include <malloc.h>
+#include <math.h>
 
 #define SIZE101 101
 
@@ -20,12 +21,29 @@ void Swap(int* p, int* q);							// Функция обмена
 void QuickSort(int* array, int first, int last);	// Быстрая сортировка
 int HeapSort(int* a, int n);						// Пирамидальная сортировка
 int CountSort(int* arr, int len);					// Cортировка слиянием
+int BinarySearch(int a[], int item, int low, int high);	// Бинарный поиск
+void InsertionSort(int a[], int n);					// Улучшенная сортировка вставками
+void Merge(int arr[], int l, int m, int r);			// Функция слияния
+void MergeSort(int arr[], int l, int r);			// Сортировка слиянием
+int CountSort(int* arr, int len);					// Сортировка подсчетом
 
 int main()
 {
 	int sel = 0;
+	int size = 10;
+	int a[10];
 
 	setlocale(LC_ALL, "rus");
+
+	for (int i = 0; i < size; i++)
+	{
+		a[i] = rand() % 20 - 10;
+	}
+	for (int i = 0; i < size; i++)
+	{
+		printf("%d ", a[i]);
+	}
+	printf("\n");
 
 	do
 	{
@@ -87,6 +105,7 @@ void Swap(int* p, int* q)
 void QuickSort(int* array, int first, int last)
 {
 	int i = first, j = last, x = array[(first + last) / 2];
+
 	do
 	{
 		while (array[i] < x)
@@ -100,7 +119,9 @@ void QuickSort(int* array, int first, int last)
 			i++;
 			j--;
 		}
-	} while (i <= j);
+	}
+	while (i <= j);
+
 	if (i < last)
 		QuickSort(array, i, last);
 	if (first < j)
@@ -161,6 +182,140 @@ int CountSort(int* arr, int len)
 			arr[k++] = i;
 	}
 	count += len + SIZE101;
+	free(values);
+	return count;
+}
+
+// Бинарный поиск
+int BinarySearch(int a[], int item, int low, int high)
+{
+	if (high <= low)
+	{
+		if (item > a[low])
+		{
+			return (low + 1);
+		}
+		else
+		{
+			return low;
+		}
+	}
+
+	int mid = (low + high) / 2;
+
+	if (item == a[mid])
+	{
+		return mid + 1;
+	}
+
+	if (item > a[mid])
+	{
+		return BinarySearch(a, item, mid + 1, high);
+	}
+
+	return BinarySearch(a, item, low, mid - 1);
+}
+
+// Улучшенная сортировка вставками
+void InsertionSort(int a[], int n)
+{
+	int i, loc, j, k, selected;
+
+	for (i = 1; i < n; i++)
+	{
+		j = i - 1;
+		selected = a[i];
+
+		loc = BinarySearch(a, selected, 0, j);
+
+		while (j >= loc)
+		{
+			a[j + 1] = a[j];
+			j--;
+		}
+		a[j + 1] = selected;
+	}
+}
+
+// Функция слияния
+void Merge(int arr[], int l, int m, int r)
+{
+	int i, j, k;
+	int n1 = m - l + 1;
+	int n2 = r - m;
+
+	//int L[n1], R[n2];
+
+	int* L = (int*)malloc(n1 * sizeof(int));
+	int* R = (int*)malloc(n2 * sizeof(int));
+
+	for (i = 0; i < n1; i++)
+		L[i] = arr[l + 1];
+	for (j = 0; j < n2; j++)
+		R[j] = arr[m + 1 + j];
+
+	i = 0; j = 0; k = l;
+	while (i < n1 && j < n2)
+	{
+		if (L[i] <= R[j])
+		{
+			arr[k] = L[i];
+			i++;
+		}
+		else
+		{
+			arr[k] = R[j];
+			j++;
+		}
+		k++;
+	}
+
+	while (i < n1)
+	{
+		arr[k] = L[i];
+		i++;
+		k++;
+	}
+}
+
+// Сортировка слиянием
+void MergeSort(int arr[], int l, int r)
+{
+	if (l < r)
+	{
+		int m = l + (r - 1) / 2;
+		MergeSort(arr, l, m);
+		MergeSort(arr, m + 1, r);
+		Merge(arr, l, m, r);
+	}
+}
+
+// Сортировка подсчетом
+int CountSort(int* arr, int len)
+{
+	int count = 0;
+	int* values = (int*)calloc(SIZE101, sizeof(int));
+
+	if (values == NULL)
+	{
+		puts("Out of memory!");
+		exit(1);
+	}
+
+	count += len;
+	for (int i = 0; i < len; ++i)
+	{
+		++values[arr[i]];
+	}
+
+	int k = 0;
+	for (int i = 0; i < SIZE101; i++)
+	{
+		for (int j = 0; j < values[i]; ++j)
+			arr[k++] = i;
+	}
+	count += len + SIZE101;
+
 	free(values);
 	return count;
 }
