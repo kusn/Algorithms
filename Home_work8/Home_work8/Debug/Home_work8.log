@@ -1,0 +1,4 @@
+﻿  Main.c
+D:\Учеба\Algorithms\Home_work8\Home_work8\Main.c(28,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Учеба\Algorithms\Home_work8\Home_work8\Main.c(108,9): warning C4101: j: неиспользованная локальная переменная
+  Home_work8.vcxproj -> D:\Учеба\Algorithms\Home_work8\Debug\Home_work8.exe
