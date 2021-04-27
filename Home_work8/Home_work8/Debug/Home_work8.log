@@ -1,16 +1,16 @@
 ﻿  Main.c
 D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(76,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(170,21): warning C4047: =: "pNode *" отличается по уровням косвенного обращения от "pNode"
-D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(176,25): warning C4047: функция: "pNode *" отличается по уровням косвенного обращения от "pNode **"
-D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(176,17): warning C4024: PigeonHoleSort: различные типы для формального и фактического параметров 1
-D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(177,75): warning C4047: функция: "pNode *" отличается по уровням косвенного обращения от "pNode **"
-D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(177,67): warning C4024: ShowArrayNode: различные типы для формального и фактического параметров 2
-D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(161,1): warning C4047: инициализация: "pNode **" отличается по уровням косвенного обращения от "pNode *"
-D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(405,9): warning C4101: j: неиспользованная локальная переменная
-D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(507,17): warning C4101: k: неиспользованная локальная переменная
-D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(744,7): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(745,2): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(749,3): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(763,8): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(579): warning C4716: MergeSort: должна возвращать значение
+D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(171,21): warning C4047: =: "pNode *" отличается по уровням косвенного обращения от "pNode"
+D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(177,25): warning C4047: функция: "pNode *" отличается по уровням косвенного обращения от "pNode **"
+D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(177,17): warning C4024: PigeonHoleSort: различные типы для формального и фактического параметров 1
+D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(178,75): warning C4047: функция: "pNode *" отличается по уровням косвенного обращения от "pNode **"
+D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(178,67): warning C4024: ShowArrayNode: различные типы для формального и фактического параметров 2
+D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(162,1): warning C4047: инициализация: "pNode **" отличается по уровням косвенного обращения от "pNode *"
+D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(406,9): warning C4101: j: неиспользованная локальная переменная
+D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(508,17): warning C4101: k: неиспользованная локальная переменная
+D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(748,7): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(749,2): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(753,3): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(767,8): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Kudryashov\Учеба\Algorithms\Home_work8\Home_work8\Main.c(580): warning C4716: MergeSort: должна возвращать значение
   Home_work8.vcxproj -> D:\Kudryashov\Учеба\Algorithms\Home_work8\Debug\Home_work8.exe

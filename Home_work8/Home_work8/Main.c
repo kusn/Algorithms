@@ -47,18 +47,18 @@ void solution4();
 void solution5();
 void menu();
 void Swap(int* p, int* q);							// Функция обмена
-int QuickSort(int* array, int first, int last);		// Быстрая сортировка
-int HeapSort(int* a, int n);						// Пирамидальная сортировка
+unsigned long int QuickSort(int* array, int first, int last);// Быстрая сортировка
+unsigned long int HeapSort(int* a, int n);					// Пирамидальная сортировка
 int CountSort(int* arr, int len);					// Сортировка подсчетом
 int BinarySearch(int a[], int item, int low, int high);	// Бинарный поиск
 void InsertionSort(int a[], int n);					// Улучшенная сортировка вставками
-int MergeSort(long num, int a[]);					// Сортировка слиянием
+unsigned long int MergeSort(long num, int a[]);				// Сортировка слиянием
 void PigeonHoleSort(pNode* array, int n, int minValue, int maxValue);	// Сортировка списком
 void ShowArrayNode(char* message, pNode* array, int N);
-int BubbleSort(int* a, int n);						// Пузырьковая сортировка
+unsigned long int BubbleSort(int* a, int n);					// Пузырьковая сортировка
 void swap(int* p, int* q);
-int ShakerSort(int* a, int n);						// Шейкер-сортировка
-int ShellsSort(int* a, int n);						// Сортировка Шелла
+unsigned long int ShakerSort(int* a, int n);					// Шейкер-сортировка
+unsigned long int ShellsSort(int* a, int n);					// Сортировка Шелла
 void PrintArray(int N, int* a);						// Печать массива
 int* GetArray(int size);							// Получить массив
 int* GetArrayFromFile(char* file);					// Получение массива из файла
@@ -119,7 +119,7 @@ void solution1()
 }
 void solution2()
 {
-	int count;
+	unsigned long int count;
 	int* mass;
 
 	printf("Задача 2. Реализовать быструю сортировку\n");
@@ -137,6 +137,7 @@ void solution2()
 void solution3()
 {
 	int* mass;
+	unsigned long int count;
 
 	printf("Задача 3. Реализовать сортировку слиянием\n");
 	// Решение
@@ -145,7 +146,7 @@ void solution3()
 	printf("Неотсортированный массив: \n");
 	PrintArray(size, mass);
 	printf("\n");
-	MergeSort(size, mass);
+	count = MergeSort(size, mass);
 	printf("Отсортированный массив: \n");
 	PrintArray(size, mass);
 	printf("\n");
@@ -183,7 +184,7 @@ void solution5()
 	int size100 = 100;
 	int size10000 = 10000;
 	int size1000000 = 1000000;
-	int count = 0;
+	unsigned long int count = 0;
 
 	time_t start, end;
 
@@ -206,21 +207,21 @@ void solution5()
 	start = time(NULL);
 	count = QuickSort(mass100, 0, 100);
 	end = time(NULL);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);	
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);	
 	
 	mass10000 = GetArrayFromFile(file10000);
 	printf("10000 элементов: ");
 	start = time(NULL);
 	count = QuickSort(mass10000, 0, 10000);
 	end = time(NULL);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);	
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);	
 	
 	mass1000000 = GetArrayFromFile(file1000000);
 	printf("1000000 элементов: ");
 	start = time(NULL);
 	count = QuickSort(mass1000000, 0, 1000000);
 	end = time(NULL);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);	
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);	
 
 	printf("-----------Сортировка Shell Sort-----------:\n");	
 	mass100 = GetArrayFromFile(file100);
@@ -228,21 +229,21 @@ void solution5()
 	time(&start);
 	count = ShellsSort(mass100, size100);
 	time(&end);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);
 	
 	mass10000 = GetArrayFromFile(file10000);
 	printf("10000 элементов: ");
 	time(&start);
 	count = ShellsSort(mass10000, size10000);
 	time(&end);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);
 	
 	mass1000000 = GetArrayFromFile(file1000000);
 	printf("1000000 элементов: ");
 	time(&start);
 	count = ShellsSort(mass1000000, size1000000);
 	time(&end);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);
 
 	printf("-----------Сортировка Merge Sort-----------:\n");	
 	mass100 = GetArrayFromFile(file100);
@@ -250,21 +251,21 @@ void solution5()
 	time(&start);
 	count = MergeSort(size100, mass100);
 	time(&end);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);
 
 	mass10000 = GetArrayFromFile(file10000);
 	printf("10000 элементов: ");
 	time(&start);
 	count = MergeSort(size10000, mass10000);
 	time(&end);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);
 
 	mass1000000 = GetArrayFromFile(file1000000);
 	printf("1000000 элементов: ");
 	time(&start);
 	count = MergeSort(size1000000, mass1000000);
 	time(&end);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);
 
 	printf("-----------Сортировка Heap Sort-----------:\n");	
 	mass100 = GetArrayFromFile(file100);
@@ -272,21 +273,21 @@ void solution5()
 	time(&start);
 	count = HeapSort(mass100, size100);
 	time(&end);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);
 
 	mass10000 = GetArrayFromFile(file10000);
 	printf("10000 элементов: ");
 	time(&start);
 	count = HeapSort(mass10000, size10000);
 	time(&end);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);
 
 	mass1000000 = GetArrayFromFile(file1000000);
 	printf("1000000 элементов: ");
 	time(&start);
 	count = HeapSort(mass1000000, size1000000);
 	time(&end);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);
 
 	printf("-----------Сортировка Bubble Sort-----------:\n");
 	mass100 = GetArrayFromFile(file100);
@@ -294,21 +295,21 @@ void solution5()
 	time(&start);
 	count = BubbleSort(mass100, size100);
 	time(&end);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);
 
 	mass10000 = GetArrayFromFile(file10000);
 	printf("10000 элементов: ");
 	time(&start);
 	count = BubbleSort(mass10000, size10000);
 	time(&end);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);
 
 	mass1000000 = GetArrayFromFile(file1000000);
 	printf("1000000 элементов: ");
 	time(&start);
 	count = BubbleSort(mass1000000, size1000000);
 	time(&end);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);
 	
 	printf("-----------Сортировка Shake Sort-----------:\n");
 	mass100 = GetArrayFromFile(file100);
@@ -316,21 +317,21 @@ void solution5()
 	time(&start);
 	count = ShakerSort(mass100, size100);
 	time(&end);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);
 
 	mass10000 = GetArrayFromFile(file10000);
 	printf("10000 элементов: ");
 	time(&start);
 	count = ShakerSort(mass10000, size10000);
 	time(&end);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);
 
 	mass1000000 = GetArrayFromFile(file1000000);
 	printf("1000000 элементов: ");
 	time(&start);
 	count = ShakerSort(mass1000000, size1000000);
 	time(&end);
-	printf("Время выполнения: %f;\tКоличество сравнений: %i\n", difftime(end, start), count);
+	printf("Время выполнения: %f;\tКоличество сравнений: %lu\n", difftime(end, start), count);
 	free(mass100);
 	free(mass10000);
 	free(mass1000000);
@@ -357,9 +358,9 @@ void Swap(int* p, int* q)
 }
 
 // Быстрая сортировка
-int QuickSort(int* array, int first, int last)
+unsigned long int QuickSort(int* array, int first, int last)
 {
-	int count = 0;
+	unsigned long int count = 0;
 	int i = first, j = last, x = array[(first + last) / 2];
 
 	do
@@ -400,10 +401,10 @@ int QuickSort(int* array, int first, int last)
 }
 
 // Пирамидальная сортировка
-int HeapSort(int* a, int n)
+unsigned long int HeapSort(int* a, int n)
 {
 	int i, j, mid, t = n - 1;
-	int count = 0;
+	unsigned long int count = 0;
 
 	mid = n / 2;										// середина массива
 	for (i = mid; i >= 1; i--)
@@ -522,11 +523,11 @@ void InsertionSort(int a[], int n)
 	}
 }
 
-int MergeSort(long num, int a[])
+unsigned long int MergeSort(long num, int a[])
 {
 	int rght, rend;
 	int i, j, m;
-	int count = 0;
+	unsigned long int count = 0;
 
 	int* b = (int*)malloc(num * sizeof(int));
 
@@ -625,10 +626,11 @@ void ShowArrayNode(char* message, pNode* array, int N)
 }
 
 // Пузырьковая сортировка
-int BubbleSort(int* a, int n)
+unsigned long int BubbleSort(int* a, int n)
 {
-	int count = 0;
 	int j = 0;
+	unsigned long int count = 0;
+	
 	for (int i = 0; i < n; i++)
 	{
 		for (j = 0; j < n - 1; j++)
@@ -653,12 +655,12 @@ void swap(int* p, int* q)
 }
 
 // Шейкер-сортировка
-int ShakerSort(int* a, int n)
+unsigned long int ShakerSort(int* a, int n)
 {
 	// границы и подсчет операций
 	int left = 0,
-		right = n - 1,
-		count = 0;
+		right = n - 1;
+	unsigned long int count = 0;
 
 	while (left <= right)
 	{
@@ -685,10 +687,12 @@ int ShakerSort(int* a, int n)
 }
 
 // Сортировка Шелла
-int ShellsSort(int* a, int n)
+unsigned long int ShellsSort(int* a, int n)
 {
-	int i, j, k, count = 0;
+	int i, j, k;
 	int t;
+	unsigned long int count = 0;
+
 	for (k = n / 2; k > 0; k /= 2)
 		for (i = k; i < n; i++)
 		{
